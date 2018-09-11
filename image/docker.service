@@ -8,6 +8,11 @@ Requires=docker.socket
 [Service]
 Environment=container=docker
 Type=notify
+
+Environment="HTTP_PROXY=http://192.168.199.230:30999/" 
+Environment="HTTPS_PROXY=http://192.168.199.230:30999/" 
+Environment="NO_PROXY=localhost,127.0.0.0/8"
+
 # the default is not to use systemd for cgroups because the delegate issues still
 # exists and systemd currently does not support the cgroup feature set required
 # for containers run by docker
